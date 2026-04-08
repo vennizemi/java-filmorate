@@ -5,6 +5,8 @@ import lombok.Data;
 import ru.yandex.practicum.filmorate.validation.OnUpdate;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 public class User {
@@ -20,4 +22,5 @@ public class User {
     @PastOrPresent(message = "дата рождения не может быть в будущем")
     private LocalDate birthday;
 
+    private Set<Long> friends = new HashSet<>();
 }

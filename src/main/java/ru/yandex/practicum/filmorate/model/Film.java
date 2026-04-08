@@ -6,6 +6,8 @@ import ru.yandex.practicum.filmorate.validation.FilmReleaseDateConstraint;
 import ru.yandex.practicum.filmorate.validation.OnUpdate;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 public class Film {
@@ -23,4 +25,5 @@ public class Film {
     @Positive(message = "продолжительность фильма должна быть положительным числом")
     private Integer duration;
 
+    private Set<Long> likes = new HashSet<>();
 }
