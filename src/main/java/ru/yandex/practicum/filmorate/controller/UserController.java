@@ -1,6 +1,7 @@
 package ru.yandex.practicum.filmorate.controller;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User findById(@PathVariable long id) {
+    public User findById(@PathVariable @Positive long id) {
         return userService.findById(id);
     }
 
@@ -42,13 +43,13 @@ public class UserController {
     }
 
     @PutMapping("/{id}/friends/{friendId}")
-    public void addFriend(@PathVariable long id, @PathVariable long friendId) {
-        userService.addFriend(id, friendId);
+    public User addFriend(@PathVariable @Positive long id, @PathVariable @Positive long friendId) {
+        return userService.addFriend(id, friendId);
     }
 
     @DeleteMapping("/{id}/friends/{friendId}")
-    public void removeFriend(@PathVariable long id, @PathVariable long friendId) {
-        userService.removeFriend(id, friendId);
+    public User removeFriend(@PathVariable long id, @PathVariable long friendId) {
+        return userService.removeFriend(id, friendId);
     }
 
     @GetMapping("/{id}/friends/common/{otherId}")
