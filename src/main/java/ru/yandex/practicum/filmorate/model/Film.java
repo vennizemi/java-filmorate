@@ -1,6 +1,7 @@
 package ru.yandex.practicum.filmorate.model;
 
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 import lombok.Data;
 import ru.yandex.practicum.filmorate.validation.FilmReleaseDateConstraint;
 import ru.yandex.practicum.filmorate.validation.OnUpdate;
@@ -10,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@Builder
 public class Film {
 
     @NotNull(message = "Id должен быть указан при обновлении", groups = OnUpdate.class)
@@ -25,5 +27,6 @@ public class Film {
     @Positive(message = "продолжительность фильма должна быть положительным числом")
     private Integer duration;
 
-    private Set<Long> likes = new HashSet<>();
+    private MPA mpa;
+    private Set<Long> likes;
 }

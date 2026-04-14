@@ -14,12 +14,13 @@ public class FilmControllerTests {
 
     @BeforeEach
     void setUp() {
-        validFilm = new Film();
-        validFilm.setId(1L);
-        validFilm.setName("Властелин колец");
-        validFilm.setDescription("Эпическая фэнтези-сага");
-        validFilm.setReleaseDate(LocalDate.of(1995, 12, 28));
-        validFilm.setDuration(178);
+        validFilm = Film.builder()
+                .id(1L)
+                .name("Властелин колец")
+                .description("Эпическая фэнтези-сага")
+                .releaseDate(LocalDate.of(1995, 12, 28))
+                .duration(178)
+                .build();
     }
 
     @Test

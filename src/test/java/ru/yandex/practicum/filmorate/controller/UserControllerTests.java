@@ -15,12 +15,13 @@ public class UserControllerTests {
 
     @BeforeEach
     void setUp() {
-        validUser = new User();
-        validUser.setId(1L);
-        validUser.setEmail("user@example.com");
-        validUser.setLogin("validlogin");
-        validUser.setName("Иван Иванов");
-        validUser.setBirthday(LocalDate.of(1990, 1, 1));
+        validUser = User.builder()
+                .id(1L)
+                .email("user@example.com")
+                .login("validlogin")
+                .name("Иван Иванов")
+                .birthday(LocalDate.of(1990, 1, 1))
+                .build();
     }
 
     @Test
