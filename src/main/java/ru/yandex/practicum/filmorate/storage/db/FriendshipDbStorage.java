@@ -6,12 +6,10 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.filmorate.model.Friendship;
+import ru.yandex.practicum.filmorate.model.FriendshipStatus;
 import ru.yandex.practicum.filmorate.storage.FriendshipStorage;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Collection;
-import java.util.List;
 
 @Component
 @RequiredArgsConstructor

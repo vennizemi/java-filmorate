@@ -6,7 +6,6 @@ import lombok.Data;
 import ru.yandex.practicum.filmorate.validation.OnUpdate;
 
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
